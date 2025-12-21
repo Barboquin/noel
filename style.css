@@ -1,0 +1,84 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font-family: system-ui, Arial, sans-serif; background: #000; }
+
+/* Fond portrait (mobile-first) */
+.app{
+  min-height: 100vh;
+  background: url("bg-mobile.png") center top / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 16px calc(env(safe-area-inset-bottom) + 36px);
+}
+
+/* Zone roue + UI */
+.wheel-zone{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  /* Petite “plaque” semi-transparente pour lisibilité */
+  background: rgba(0,0,0,.18);
+  backdrop-filter: blur(2px);
+  border-radius: 18px;
+  padding: 14px 14px 16px;
+}
+
+/* Flèche */
+.pointer{
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 24px solid gold;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.45));
+}
+
+/* Roue */
+.wheel{
+  width: min(78vw, 300px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 8px solid rgba(255,215,0,.95);
+  background: conic-gradient(
+    #e74c3c 0deg 60deg,
+    #27ae60 60deg 120deg,
+    #f1c40f 120deg 180deg,
+    #e67e22 180deg 240deg,
+    #3498db 240deg 300deg,
+    #9b59b6 300deg 360deg
+  );
+  box-shadow: 0 10px 30px rgba(0,0,0,.55);
+  transition: transform 4s cubic-bezier(.12,.9,.12,1);
+}
+
+/* Bouton */
+.btn{
+  width: min(78vw, 300px);
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 0;
+  border-radius: 14px;
+  background: #ffd700;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+.btn:active{ transform: scale(0.98); }
+.btn:disabled{ opacity: .75; cursor: not-allowed; }
+
+.result{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  min-height: 24px;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+
+/* Sur très petits écrans */
+@media (max-width: 360px){
+  .wheel-zone{ padding: 12px; }
+  .btn{ font-size: 17px; }
+}
