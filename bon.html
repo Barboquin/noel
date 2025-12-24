@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>🎁 Bon d’achat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="badge">🎁 Ton lot</div>
+      <h1 class="title">🎁 Bon d’achat</h1>
+      <p class="subtitle">Ton cadeau est prêt ✨</p>
+    </header>
+
+    <section class="card">
+      <img class="hero" src="img-bon.png" alt="🎁 Bon d’achat">
+      <div class="kv">🎁 Bon d’achat</div>
+      <div class="small">Envoi moi un message pour me dire que tu as un bon dachat <3.</div>
+      <div id="meta" class="codepill"></div>
+
+      <div style="height:12px;"></div>
+      <button class="btn secondary" type="button" onclick="window.location.href='index.html'">↩️ Revenir</button>
+    </section>
+
+    <footer class="foot">
+      <span class="tiny">🎄 Joyeuses fêtes</span>
+    </footer>
+  </main>
+
+  <script>
+    const p=new URLSearchParams(location.search);
+    const name=(p.get("name")||"").trim();
+    const code=(p.get("code")||"").trim().toUpperCase();
+    const meta=[];
+    if(name) meta.push("Prénom : " + name);
+    if(code) meta.push("Code : " + code);
+    document.getElementById("meta").textContent = meta.join(" • ");
+  </script>
+
+  <!-- ❄️ Neige + 🎶 Musique -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <audio id="music" loop preload="auto">
+    <source src="noel-music.wav" type="audio/wav">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Musique de Noël">
+    🎶
+  </button>
+
+  <script src="snow-music.js?v=11" defer></script>
+</body>
+</html>

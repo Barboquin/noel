@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Noël 🎄</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="badge">🎄 Noël</div>
+      <h1 class="title">Découvre ton cadeau</h1>
+      <p class="subtitle">Entre ton prénom + ton code, puis lance la roue 🎡</p>
+    </header>
+
+    <section class="panel">
+      <div class="info">
+        Dans ton sachet, tu as une <b>carte à gratter</b>.<br/>
+        Gratte-la pour révéler ton <b>code secret</b>. Entre ensuite ton <b>prénom</b> + ton <b>code</b>,
+        lance la roue, puis clique sur <b>« Découvre ton lot »</b>.
+      </div>
+
+      <div class="col">
+        <div>
+          <label class="label" for="nameInput">Ton prénom</label>
+          <input id="nameInput" class="input"
+            inputmode="text" autocomplete="off" autocapitalize="words" spellcheck="false"
+            placeholder="Ex : Pierre Paul Jack..." maxlength="24" />
+        </div>
+
+        <div>
+          <label class="label" for="codeInput">Ton code</label>
+          <input id="codeInput" class="input"
+            inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false"
+            placeholder="Ex : 6J8M2P" maxlength="12" />
+        </div>
+
+        <button id="spinBtn" class="btn" type="button">Lancer</button>
+      </div>
+
+      <div class="wheel-zone" aria-label="Roue de Noël">
+        <div class="pointer" aria-hidden="true"></div>
+
+        <div id="wheelSpin" class="wheel-spin" aria-label="Roue">
+          <div class="wheel"></div>
+
+          <svg class="wheel-labels" viewBox="0 0 100 100" aria-hidden="true">
+            <g transform="rotate(30 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">GAGNÉ</text></g>
+            <g transform="rotate(90 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">PERDU</text></g>
+            <g transform="rotate(150 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">GAGNÉ</text></g>
+            <g transform="rotate(210 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">PERDU</text></g>
+            <g transform="rotate(270 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">GAGNÉ</text></g>
+            <g transform="rotate(330 50 50)"><text class="lbl" x="50" y="16" text-anchor="middle">PERDU</text></g>
+          </svg>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+
+        <button id="revealBtn" class="btn secondary" type="button" style="display:none;">
+          🔎 Découvre ton lot
+        </button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span class="tiny">✨ Joyeuses fêtes</span>
+    </footer>
+  </main>
+
+  <!-- ❄️ Neige + 🎶 Musique -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <audio id="music" loop preload="auto">
+    <source src="noel-music.wav" type="audio/wav">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Musique de Noël">
+    🎶
+  </button>
+
+  <script src="snow-music.js?v=11" defer></script>
+
+<script src="script.js?v=11" defer></script>
+</body>
+</html>

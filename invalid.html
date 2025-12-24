@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Oups</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="badge">❌ Oups</div>
+      <h1 class="title">Informations incorrectes</h1>
+      <p class="subtitle">Vérifie ton prénom et le code sur la carte à gratter.</p>
+    </header>
+
+    <section class="panel">
+      <button class="btn secondary" type="button" onclick="window.location.href='index.html'">↩️ Revenir</button>
+    </section>
+
+    <footer class="foot">
+      <span class="tiny">✨ Joyeuses fêtes</span>
+    </footer>
+  </main>
+
+  <!-- ❄️ Neige + 🎶 Musique -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <audio id="music" loop preload="auto">
+    <source src="noel-music.wav" type="audio/wav">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Musique de Noël">
+    🎶
+  </button>
+
+  <script src="snow-music.js?v=11" defer></script>
+</body>
+</html>

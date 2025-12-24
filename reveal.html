@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Révélation 🎁</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="badge">🎁 Révélation</div>
+      <h1 class="title">Un instant…</h1>
+      <p class="subtitle">On prépare ton cadeau ✨</p>
+    </header>
+
+    <section class="panel">
+      <div class="result">Chargement…</div>
+    </section>
+
+    <footer class="foot">
+      <span class="tiny">🎄 Joyeuses fêtes</span>
+    </footer>
+  </main>
+
+  <script src="reveal.js?v=11" defer></script>
+
+  <!-- ❄️ Neige + 🎶 Musique -->
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <audio id="music" loop preload="auto">
+    <source src="noel-music.wav" type="audio/wav">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Musique de Noël">
+    🎶
+  </button>
+
+  <script src="snow-music.js?v=11" defer></script>
+</body>
+</html>
