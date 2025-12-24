@@ -14,7 +14,7 @@ function normalizeName(s){
 
 const VALID_CODES = new Set([
   "7K9M2R","4T6N8G","9H3P5X","2V7D4S","8C5W9J","3R8F2Q","6Y4K7N","5G9T3H","7P2C8V","4N6R9D",
-  "9X3G5T","2J7W4C","8S5V9P","3Q8Y2K","6H4N7R","5D9C3J","7T2X8S","4K6P9W","9V3R5G","2C7H4Q"
+  "9X3G5T","2J7W4C","8S5V9P","3Q8Y2K","6H4N7R","5D9C3J","7T2X8S","4K6P9W","9V3R5G","2C7H4Q","TEST25"
 ]);
 
 const NAME_TO_TYPE = new Map([
@@ -52,6 +52,10 @@ const NAME_TO_TYPE = new Map([
   ["doriane","bon"],
   ["dory","bon"],
   ["dodo","bon"],
+  ["debo","fastfood"],
+  ["deborah","fastfood"],
+  ["debora","fastfood"],
+  ["deb","fastfood"],
 ]);
 
 const nameKey = normalizeName(rawName);
