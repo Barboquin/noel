@@ -52,6 +52,7 @@ const NAME_TO_TYPE = new Map([
   ["doriane","bon"],
   ["dory","bon"],
   ["dodo","bon"],
+  ["marine","bon"],
   ["debo","fastfood"],
   ["deborah","fastfood"],
   ["debora","fastfood"],
